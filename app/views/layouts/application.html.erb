@@ -30,6 +30,8 @@
     <%= render 'layouts/about' %>
     <%= render 'layouts/contact' %>
     <%= yield %>
-    <h2 class="masthead-heading text-uppercase"><%= ENV['RAILS_ENV'] %></h2> 
+    <% if ENV['RAILS_ENV'] == 'development' %>
+      <h2 class="masthead-heading text-uppercase"><%= ENV['RAILS_ENV'] %></h2>
+    <% end %> 
   </body>
 </html>
