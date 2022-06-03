@@ -29,6 +29,7 @@
     <%= render 'layouts/portfolio' %>
     <%= render 'layouts/about' %>
     <%= render 'layouts/contact' %>
-    <%= yield %> 
+    <%= yield %>
+    <h2 class="masthead-heading text-uppercase"><%= ENV['RAILS_ENV'] %></h2> 
   </body>
 </html>
