@@ -16,7 +16,7 @@
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= link_to "styles.css" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "scripts.js" %>
@@ -25,13 +25,13 @@
   <body id="page-top">
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/header' %>
+    <% if ENV['RAILS_ENV'] == 'development' %>
+      <h2 class="masthead-heading btn btn-warning text-uppercase"><%= ENV['RAILS_ENV'] %></h2>
+    <% end %> 
     <%= render 'layouts/skills' %>
     <%= render 'layouts/portfolio' %>
     <%= render 'layouts/about' %>
     <%= render 'layouts/contact' %>
     <%= yield %>
-    <% if ENV['RAILS_ENV'] == 'development' %>
-      <h2 class="masthead-heading text-uppercase"><%= ENV['RAILS_ENV'] %></h2>
-    <% end %> 
   </body>
 </html>
