@@ -85,8 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: marcelo-moyano
-  username: deploy
-  password: $$Marce5413a 
-
-  #<%= ENV["PORTFOLIOS_DATABASE_PASSWORD"] %>
+  database: portfolios_production
+  username: postgres
+  password: asdasd123
