@@ -87,4 +87,6 @@ production:
   <<: *default
   database: marcelo-moyano
   username: deploy
-  password: <%= ENV["PORTFOLIOS_DATABASE_PASSWORD"] %>
+  password: $$Marce5413a 
+
+  #<%= ENV["PORTFOLIOS_DATABASE_PASSWORD"] %>
