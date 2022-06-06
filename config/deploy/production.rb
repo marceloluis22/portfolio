@@ -1,5 +1,5 @@
 set :stage, :production
-server '165.227.178.211', user: 'deploy', roles: %w{app db web}
+server '165.227.178.211', user: 'deploy', roles: %w{app web}
 
 # server-based syntax
 # ======================
@@ -52,13 +52,14 @@ server '165.227.178.211', user: 'deploy', roles: %w{app db web}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-# server "example.com",
-#   user: "user_name",
+# server "165.227.178.211",
+#   user: "deploy",
 #   roles: %w{web app},
 #   ssh_options: {
-#     user: "user_name", # overrides user setting above
+#     user: "deploy", # overrides user setting above
 #     keys: %w(/home/user_name/.ssh/id_rsa),
 #     forward_agent: false,
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+

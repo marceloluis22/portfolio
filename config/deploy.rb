@@ -36,6 +36,21 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
 
+desc 'Restart application'
+task :restart do
+  on roles(:app), in: :sequence, wait: 5 do
+    within release_path do
+      execute :bundle, 'install'
+      execute :chmod, '777 '+release_path.join('tmp/cache/').to_s
+      execute :chmod, '777 '+release_path.join('log/').to_s
+      execute :rake, 'db:create RAILS_ENV=production'
+      execute :rake, 'db:migrate RAILS_ENV=production'
+      execute :rake, 'assets:precompile RAILS_ENV=production'
+      execute 'sudo service nginx restart'
+    end
+  end
+end
+
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
