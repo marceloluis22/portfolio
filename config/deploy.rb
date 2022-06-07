@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.0"
 
-set :application, "marcelo-moyano"
+set :application, "marcelo-moyano.com.ar"
 set :repo_url, "https://github.com/marceloluis22/portfolios.git"
 set :branch, 'main' 
 
